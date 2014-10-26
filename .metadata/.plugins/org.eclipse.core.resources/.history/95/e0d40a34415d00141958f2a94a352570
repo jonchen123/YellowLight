@@ -1,0 +1,18 @@
+
+public class SimPhysics {
+	
+	private final int v0 = 0;
+	
+	
+	public double calcStoppingDistance(double v, double a){
+		double t = Math.abs((v - v0)/a);
+		double deltaX = .5 * v * t;
+		return deltaX;
+	}
+	
+	public static void main(String[] args){
+		SimPhysics test = new SimPhysics();
+		System.out.println(test.calcStoppingDistance(10, -1));
+	}
+	
+}
