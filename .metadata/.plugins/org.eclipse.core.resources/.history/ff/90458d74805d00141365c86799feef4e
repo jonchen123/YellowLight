@@ -1,0 +1,46 @@
+import java.util.Random;
+
+public class RandomSituationGen {
+	
+	Random gen = new Random();//for random issues
+	private int vi = 0;//for random speed down the road
+	private int a = 0;//for random acceleration 
+	private int fromLight = 0;//for random distance from yellow light
+	private final double reactionTime = 1;//reaction time
+	
+	public RandomSituationGen(boolean speed){//if speed: use faster (50)
+		genAcceleration();
+		if(speed){
+			genVI50();
+		} else{
+			genVI30();
+		}
+		distanceFromLight();
+	}
+	
+	public void genAcceleration(){// in mi/s^2
+		a = gen.nextInt(15) + 15;
+	}
+	
+	public void genVI50(){// in mph
+		vi =  gen.nextInt(15) + 40;
+	}
+	
+	public void genVI30(){// in mph
+		vi = gen.nextInt(15) + 20;
+	}
+	
+	public void distanceFromLight(){// in feet
+		fromLight = (int)(Math.random()*200.0);
+	}
+	
+	
+	public String toString(){
+		return "Vi = " + vi + " a = " + a + " fromLight = " + fromLight;
+	}
+	
+	
+	
+	
+	
+}

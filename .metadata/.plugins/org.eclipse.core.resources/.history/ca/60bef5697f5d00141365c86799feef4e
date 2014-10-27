@@ -1,0 +1,25 @@
+
+public class SimPhysics {
+	
+	private final int vf = 0;
+	
+	
+	public double calcStoppingDistance(double vi, double a){//return in mi
+		double deltaX = (Math.pow(vf, 2) - Math.pow(vi, 2))/(2*a);
+		return deltaX;
+	}
+	
+	public double stoppingTime(double vi, double a){// return seconds
+		double t = (vf - vi)/a;
+		return t;
+	}
+	
+	
+	
+	public static void main(String[] args){
+		SimPhysics test = new SimPhysics();
+		System.out.println(test.calcStoppingDistance(10, -5));
+		System.out.println(test.stoppingTime(10, -5));
+	}
+	
+}
