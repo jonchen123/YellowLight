@@ -5,20 +5,18 @@ public class SimPhysics {
 	private double vi = 0;
 	private double a = 0;
 	private double deltaX = 0;
-	private double stopTime = 0;
+	private double stoppingTime = 0;
 	private double fromLight = 0;
 	private double coast = 0;
 	private double reactionTime = 1;
-	private double lightTime = 0;
 	
-	public SimPhysics(double viT, double aT, double frmLgt, double yellowTime){
+	public SimPhysics(double viT, double aT, double frmLgt){
 		vi = viT;
 		a = aT;
 		deltaX = calcStoppingDistance(vi, a);
-		stopTime = stoppingTime(vi, a);
+		stoppingTime = stoppingTime(vi, a);
 		fromLight = frmLgt;
 		coast = distanceToReact();
-		lightTime = yellowTime;
 	}
 	
 	//returns the distance the car needs to travel before stopping in ft
@@ -33,7 +31,7 @@ public class SimPhysics {
 		return t;
 	}
 	
-	public boolean canStopDistance(){//determines if you can stop before the light
+	public boolean canStop(){//determines if you can stop before the light
 		if(fromLight > deltaX){
 			return true;
 		} return false;
@@ -46,21 +44,13 @@ public class SimPhysics {
 		return coast;
 	}
 	
-	//determines if you can stop before the yellow changes 
-	//true: you can stop
-	public boolean canStopTime(){
-		if(lightTime > stopTime){
-			return true;
-		} return false;
-	}
-	
 	
 	
 	public static void main(String[] args){
-		SimPhysics test = new SimPhysics(10, -5, 5, 5);
+		SimPhysics test = new SimPhysics(10, -5, 5);
 		System.out.println(test.calcStoppingDistance(10, -5));
 		System.out.println(test.stoppingTime(10, -5));
-		System.out.println(test.canStopTime());
+		System.out.println(test.canStop());
 	}
 	
 }

@@ -7,7 +7,6 @@ public class RandomSituationGen {
 	private int a = 0;//for random acceleration (ft/s^2)
 	private int fromLight = 0;//for random distance from yellow light (ft)
 	private final double reactionTime = 1;//reaction time (s)
-	private double lightTime = 0;
 	
 	public RandomSituationGen(boolean speed){//if speed: use faster (50)
 		genAcceleration();
@@ -17,7 +16,6 @@ public class RandomSituationGen {
 			genVI30();
 		}
 		distanceFromLight();
-		yellowLight();
 	}
 	
 	public void genAcceleration(){// in mi/s^2
@@ -36,10 +34,6 @@ public class RandomSituationGen {
 		fromLight = (int)(Math.random()*200.0);
 	}
 	
-	public void yellowLight(){
-		lightTime = gen.nextInt(10);
-	}
-	
 	public double getVI(){
 		return vi;
 	}
@@ -50,10 +44,6 @@ public class RandomSituationGen {
 	
 	public double getAcceleration(){
 		return a;
-	}
-	
-	public double getLightTime(){
-		return lightTime;
 	}
 	
 	public String toString(){

@@ -57,10 +57,10 @@ public class SimPhysics {
 	
 	
 	public static void main(String[] args){
-		SimPhysics test = new SimPhysics(10, -5, 5, 5);
+		SimPhysics test = new SimPhysics(10, -5, 5);
 		System.out.println(test.calcStoppingDistance(10, -5));
 		System.out.println(test.stoppingTime(10, -5));
-		System.out.println(test.canStopTime());
+		System.out.println(test.canStop());
 	}
 	
 }

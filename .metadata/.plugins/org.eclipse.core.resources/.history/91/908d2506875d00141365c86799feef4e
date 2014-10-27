@@ -52,10 +52,6 @@ public class RandomSituationGen {
 		return a;
 	}
 	
-	public double getLightTime(){
-		return lightTime;
-	}
-	
 	public String toString(){
 		return "Vi = " + vi + " a = " + a + " fromLight = " + fromLight;
 	}
