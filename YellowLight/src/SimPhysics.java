@@ -29,14 +29,14 @@ public class SimPhysics {
 	
 	//returns the time it takes to stop the car in seconds
 	public double stoppingTime(double vi, double a){
-		double t = (vf - vi)/a;
+		double t = (vf - vi)/(2*a);
 		return t;
 	}
 	
-	public boolean canStopDistance(){//determines if you can stop before the light
-		if(fromLight > deltaX){
-			return true;
-		} return false;
+	public String canStopDistance(){//determines if you can stop before the light
+		if(fromLight > deltaX + coast){
+			return String.format("%4s", "true");
+		} return String.format("%4s", "false");
 	}
 	
 	//calculates the distance traveled before hitting the brakes
@@ -48,10 +48,35 @@ public class SimPhysics {
 	
 	//determines if you can stop before the yellow changes 
 	//true: you can stop
-	public boolean canStopTime(){
+	public String canStopTime(){
 		if(lightTime > stopTime){
-			return true;
-		} return false;
+			return String.format("%4s", "true");
+		} return String.format("%4s", "false");
+	}
+	
+	public String toString(){ 
+		return "Initial Velocity: " + vi + 
+				"\nAcceleration: " + a +
+				"\nStopping Distance: " + deltaX +
+				"\nDistance from Light: " + fromLight +
+				"\nStopping Time: " + stopTime + 
+				"\nDistance Traveled Before Braking: " + coast +
+				"\nLight TIme: " + lightTime +
+				"\nCan Stop in Time: " + canStopTime() +
+				"\nCan Stop in Distance: " + canStopDistance();
+	}
+	
+	public String toStringFormat(){
+		String viFormat = String.format("%4f", vi);
+		String aFormat = String.format("%4f", a);
+		String deltaXFormat = String.format("%4f", deltaX);
+		String fromLightFormat = String.format("%4f", fromLight);
+		String stopTimeFormat = String.format("%4f", stopTime);
+		String coastFormat = String.format("%4f", coast);
+		String lightTimeFormat = String.format("%4f", lightTime);
+		return String.format("%-30s%-30s%-30s%-30s%-30s%-30s%-30s%-30s%-30s", viFormat, aFormat, deltaXFormat,fromLightFormat, stopTimeFormat, coastFormat, lightTimeFormat, canStopTime(), canStopDistance());
+		//return viFormat  + aFormat + "\t" + deltaXFormat + "\t" + fromLightFormat + "\t" + stopTimeFormat + 
+			//	"\t" + coastFormat + "\t" + lightTimeFormat + "\t" + canStopTime() + "\t" + canStopDistance();
 	}
 	
 	

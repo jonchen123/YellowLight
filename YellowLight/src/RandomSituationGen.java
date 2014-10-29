@@ -20,8 +20,8 @@ public class RandomSituationGen {
 		yellowLight();
 	}
 	
-	public void genAcceleration(){// in mi/s^2
-		a = gen.nextInt(15) + 15;
+	public void genAcceleration(){// in ft/s^2
+		a = -1 * (gen.nextInt(15) + 15);
 	}
 	
 	public void genVI50(){// in ft/s (range: 50 - 55)
@@ -33,7 +33,7 @@ public class RandomSituationGen {
 	}
 	
 	public void distanceFromLight(){// in feet
-		fromLight = (int)(Math.random()*200.0);
+		fromLight = gen.nextInt(100)+100;
 	}
 	
 	public void yellowLight(){

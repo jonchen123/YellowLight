@@ -1,0 +1,25 @@
+
+public class SituationTester {
+	
+	public static void main(String[] args){
+		//RandomSituationGen situation = new RandomSituationGen(true);
+		//SimPhysics physics = new SimPhysics(situation.getVI(), situation.getAcceleration(), situation.getFromLight(), situation.getLightTime());
+		//Simphysics(vi, a, fromLight, lightTime)
+		//SimPhysics physics = new SimPhysics(70, -15, 300, 5);
+		//System.out.println(physics.toString());
+		
+		System.out.println("Initial Velocity\tAcceleration\tStopping Distance\tDistance from Light\tStopping Time\tDistance Traveled Before Braking\tLight Time\tCan Stop in Time\tCan Stop in Distance");
+		System.out.format("%3s%30s%30s%30s%30s%30s%30s%30s%30s", "Initial Velocity", "Acceleration", "Stopping Distance" + "Distance from Light", "Stopping Time", "Distance Traveled Before Braking", "Light Time", "Can Stop in Time", "Can Stop in Distance" );
+		for(int x = 0; x < 10; x++){
+			RandomSituationGen situation = new RandomSituationGen(true);
+			SimPhysics physics = new SimPhysics(situation.getVI(), situation.getAcceleration(), situation.getFromLight(), situation.getLightTime());
+			System.out.println(physics.toStringFormat());
+		}
+		
+		
+		
+		
+		
+	}
+
+}

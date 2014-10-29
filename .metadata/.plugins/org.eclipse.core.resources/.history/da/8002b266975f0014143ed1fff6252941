@@ -1,0 +1,16 @@
+
+public class SituationTester {
+	
+	public static void main(String[] args){
+		RandomSituationGen situation = new RandomSituationGen(true);
+		SimPhysics physics = new SimPhysics(situation.getVI(), situation.getAcceleration(), situation.getFromLight(), situation.getLightTime());
+		//Simphysics(vi, a, fromLight, lightTime)
+		//SimPhysics physics = new SimPhysics(70, -15, 300, 5);
+		System.out.println(physics.toString());
+		
+		
+		
+		
+	}
+
+}
