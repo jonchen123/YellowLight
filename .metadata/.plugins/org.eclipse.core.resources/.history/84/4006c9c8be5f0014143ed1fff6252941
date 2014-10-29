@@ -13,11 +13,10 @@ public class RandomSituationGen {
 		genAcceleration();
 		if(speed){
 			genVI50();
-			distanceFromLight50();
 		} else{
 			genVI30();
-			distanceFromLight30();
 		}
+		distanceFromLight();
 		yellowLight();
 	}
 	

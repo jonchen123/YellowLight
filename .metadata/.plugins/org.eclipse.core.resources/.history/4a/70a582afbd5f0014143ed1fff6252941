@@ -57,7 +57,7 @@ public class SimPhysics {
 	
 	//returns the time it takes to stop the car in seconds
 	public double stoppingTime(double vi, double a){
-		double t = (vf - vi)/(a);
+		double t = (vf - vi)/(2*a);
 		return t;
 	}
 	

@@ -13,11 +13,10 @@ public class RandomSituationGen {
 		genAcceleration();
 		if(speed){
 			genVI50();
-			distanceFromLight50();
 		} else{
 			genVI30();
-			distanceFromLight30();
 		}
+		distanceFromLight();
 		yellowLight();
 	}
 	
@@ -38,7 +37,7 @@ public class RandomSituationGen {
 	}
 	
 	public void distanceFromLight50(){//in feet
-		fromLight = gen.nextInt(100)+200;
+		fromLight = gen.nextInt(200)+100;
 	}
 	
 	public void yellowLight(){

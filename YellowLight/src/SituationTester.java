@@ -1,0 +1,87 @@
+
+public class SituationTester {
+	
+	public static void print(double[] array){
+		for(double x: array){
+			System.out.println(x);
+		}
+		System.out.println();
+	}
+	
+	public static void print(String[] array){
+		for(String x: array){
+			System.out.println(x);
+		}
+		System.out.println();
+	}
+	
+	public static void main(String[] args){
+		//RandomSituationGen situation = new RandomSituationGen(true);
+		//SimPhysics physics = new SimPhysics(situation.getVI(), situation.getAcceleration(), situation.getFromLight(), situation.getLightTime());
+		//Simphysics(vi, a, fromLight, lightTime)
+		//SimPhysics physics = new SimPhysics(70, -15, 300, 5);
+		//System.out.println(physics.toString());
+		
+	
+		System.out.format("%-20s%-20s%-20s%-30s%-20s%-30s%-20s%-20s%-20s", "Velocity", "Acceleration", "Stopping Distance", "Distance From Light", "Stopping Time", "Distance Before Braking", "Light Time", "Stop in Time", "Stop in Distance");
+		//System.out.println("\n");
+		double[] velocity = new double[20];
+		double[] acceleration = new double[20];
+		double[] stopDist = new double[20];
+		double[] distLight = new double[20];
+		double[] stopTime = new double[20];
+		double[] distBrake = new double[20];
+		double[] lightTime = new double[20];
+		String[] stopInTime = new String[20];
+		String[] stopInDist = new String[20];
+		
+		System.out.println();
+		for(int x = 0; x < 20; x++){
+			RandomSituationGen situation = new RandomSituationGen(true);
+			SimPhysics physics = new SimPhysics(situation.getVI(), situation.getAcceleration(), 250, 5);
+			System.out.println(physics.toStringFormat());
+			velocity[x] = physics.getVI();
+			acceleration[x] = physics.getA();
+			stopDist[x] = physics.getDeltaX();
+			distLight[x] = physics.getfromLight();
+			stopTime[x] = physics.getStopTime();
+			distBrake[x] = physics.getCoast();
+			lightTime[x] = physics.getLightTime();
+			stopInTime[x] = physics.canStopTime();
+			stopInDist[x] = physics.canStopDistance();
+		}
+		
+		System.out.println();
+		System.out.println("Velocity:");
+		SituationTester.print(velocity);
+		
+		System.out.println("Acceleration:");
+		SituationTester.print(acceleration);
+		
+		System.out.println("stopDist:");
+		SituationTester.print(stopDist);
+		
+		System.out.println("distLight:");
+		SituationTester.print(distLight);
+		
+		System.out.println("stopTime:");
+		SituationTester.print(stopTime);
+		
+		System.out.println("distBrake:");
+		SituationTester.print(distBrake);
+		
+		System.out.println("lightTime:");
+		SituationTester.print(lightTime);
+		
+		System.out.println("stopInTime:");
+		SituationTester.print(stopInTime);
+		
+		System.out.println("stopInDist:");
+		SituationTester.print(stopInDist);
+		
+		
+		
+		
+	}
+
+}
