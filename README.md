@@ -16,19 +16,19 @@ This computer simulation is our solution to the complex problem of determining t
 TODO
 ====
 
--[ ] Assume that the driver continues at a constant velocity 
--[ ] Create graphical representation of simulation 
--[ ] Simulate the cycles of the other lights (red, green)
--[ ] Simulate the intersection 
--[ ] Determine optimal cycle 
--[ ] Run tests with other velocities
+- [ ] Assume that the driver continues at a constant velocity 
+- [ ] Create graphical representation of simulation 
+- [ ] Simulate the cycles of the other lights (red, green)
+- [ ] Simulate the intersection 
+- [ ] Determine optimal cycle 
+- [ ] Run tests with other velocities
 
 Credit
 ======
 
 Aravind Koneru
--[Github] (github.com/aravindkoneru)
--[Facebook] (https://www.facebook.com/aravind.b.koneru)
+- [Github] (github.com/aravindkoneru)
+- [Facebook] (https://www.facebook.com/aravind.b.koneru)
 
 [Jonathan Chen] (https://www.facebook.com/jonathan.chen.7169709?fref=ts)
 
