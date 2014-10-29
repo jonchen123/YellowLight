@@ -21,34 +21,6 @@ public class SimPhysics {
 		lightTime = yellowTime;
 	}
 	
-	public double getLightTime(){
-		return lightTime;
-	}
-	
-	public double getCoast(){
-		return coast;
-	}
-	
-	public double getfromLight(){
-		return fromLight;
-	}
-	
-	public double getStopTime(){
-		return stopTime;
-	}
-	
-	public double getDeltaX(){
-		return deltaX;
-	}
-	
-	public double getA(){
-		return a;
-	}
-	
-	public double getVI(){
-		return vi;
-	}
-	
 	//returns the distance the car needs to travel before stopping in ft
 	public double calcStoppingDistance(double vi, double a){
 		double deltaX = (Math.pow(vf, 2) - Math.pow(vi, 2))/(2*a);

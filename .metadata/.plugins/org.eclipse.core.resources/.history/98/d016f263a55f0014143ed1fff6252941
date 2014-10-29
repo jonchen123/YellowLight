@@ -21,34 +21,6 @@ public class SimPhysics {
 		lightTime = yellowTime;
 	}
 	
-	public double getLightTime(){
-		return lightTime;
-	}
-	
-	public double getCoast(){
-		return coast;
-	}
-	
-	public double getfromLight(){
-		return fromLight;
-	}
-	
-	public double getStopTime(){
-		return stopTime;
-	}
-	
-	public double getDeltaX(){
-		return deltaX;
-	}
-	
-	public double getA(){
-		return a;
-	}
-	
-	public double getVI(){
-		return vi;
-	}
-	
 	//returns the distance the car needs to travel before stopping in ft
 	public double calcStoppingDistance(double vi, double a){
 		double deltaX = (Math.pow(vf, 2) - Math.pow(vi, 2))/(2*a);
@@ -102,7 +74,7 @@ public class SimPhysics {
 		String stopTimeFormat = String.format("%4f", stopTime);
 		String coastFormat = String.format("%4f", coast);
 		String lightTimeFormat = String.format("%4f", lightTime);
-		return String.format("%-20s%-20s%-20s%-30s%-20s%-30s%-20s%-20s%-20s", viFormat, aFormat, deltaXFormat,fromLightFormat, stopTimeFormat, coastFormat, lightTimeFormat, canStopTime(), canStopDistance());
+		return String.format("%-20s%-20s%-20s%-20s%-20s%-20s%-20s%-20s%-20s", viFormat, aFormat, deltaXFormat,fromLightFormat, stopTimeFormat, coastFormat, lightTimeFormat, canStopTime(), canStopDistance());
 		//return viFormat  + aFormat + "\t" + deltaXFormat + "\t" + fromLightFormat + "\t" + stopTimeFormat + 
 			//	"\t" + coastFormat + "\t" + lightTimeFormat + "\t" + canStopTime() + "\t" + canStopDistance();
 	}

@@ -21,7 +21,7 @@ public class SimPhysics {
 		lightTime = yellowTime;
 	}
 	
-	public double getLightTime(){
+	public double lightTime(){
 		return lightTime;
 	}
 	
@@ -33,7 +33,7 @@ public class SimPhysics {
 		return fromLight;
 	}
 	
-	public double getStopTime(){
+	public double getstopTime(){
 		return stopTime;
 	}
 	
