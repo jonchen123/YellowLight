@@ -26,9 +26,7 @@ TODO
 Credit
 ======
 
-Aravind Koneru
-- [Github] (github.com/aravindkoneru)
-- [Facebook] (https://www.facebook.com/aravind.b.koneru)
+[Aravind Koneru] (https://www.facebook.com/aravind.b.koneru)
 
 [Jonathan Chen] (https://www.facebook.com/jonathan.chen.7169709?fref=ts)
 
