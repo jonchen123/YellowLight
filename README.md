@@ -26,7 +26,7 @@ TODO
 Credit
 ======
 
-[Aravind Koneru] (github.com/aravindkoneru)
+[Aravind Koneru] (https://github.com/aravindkoneru)
 
 [Jonathan Chen] (https://github.com/jonchen123)
 
