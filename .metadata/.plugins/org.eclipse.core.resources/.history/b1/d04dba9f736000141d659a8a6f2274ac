@@ -23,7 +23,7 @@ public class SituationTester {
 		//System.out.println(physics.toString());
 		
 	
-		System.out.format("%-20s%-20s%-20s%-30s%-20s%-30s%-20s%-20s%-20s%-20s", "Velocity", "Acceleration", "Stopping Distance", "Distance From Light", "Stopping Time", "Distance Before Braking", "Light Time", "Stop in Time", "Stop in Distance", "Can Pass?");
+		System.out.format("%-20s%-20s%-20s%-30s%-20s%-30s%-20s%-20s%-20s", "Velocity", "Acceleration", "Stopping Distance", "Distance From Light", "Stopping Time", "Distance Before Braking", "Light Time", "Stop in Time", "Stop in Distance");
 		//System.out.println("\n");
 		double[] velocity = new double[20];
 		double[] acceleration = new double[20];
@@ -38,7 +38,7 @@ public class SituationTester {
 		System.out.println();
 		for(int x = 0; x < 20; x++){
 			RandomSituationGen situation = new RandomSituationGen(true);
-			SimPhysics physics = new SimPhysics(situation.getVI(), situation.getAcceleration(), situation.getFromLight(), 5);
+			SimPhysics physics = new SimPhysics(situation.getVI(), situation.getAcceleration(), situation.getFromLight(), 3);
 			System.out.println(physics.toStringFormat());
 			velocity[x] = physics.getVI();
 			acceleration[x] = physics.getA();
@@ -49,6 +49,7 @@ public class SituationTester {
 			lightTime[x] = physics.getLightTime();
 			stopInTime[x] = physics.canStopTime();
 			stopInDist[x] = physics.canStopDistance();
+			System.out.println(physics.runYellow());
 		}
 		
 		System.out.println();

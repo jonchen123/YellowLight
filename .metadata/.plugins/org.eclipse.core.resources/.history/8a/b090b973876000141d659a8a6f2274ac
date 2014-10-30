@@ -96,14 +96,15 @@ public class SimPhysics {
 	
 	//determines if the car can just keep going and make the yellow
 	//returns true if it can pass, false if it can't
-	public String runYellow(){
+	public boolean runYellow(){
 		if(canStopTime().equals("false") || canStopDistance().equals("false")){
 			double distanceToTravel = fromLight + 100;
 			double timeToPass = (2*(fromLight + 100))/(2*vi);
 			if(timeToPass < lightTime){
-				return String.format("%4s", "true");			}
+				return true;
+			}
 		}
-		 return String.format("%4s", "false");
+		return false;
 	}
 	
 	public String toStringFormat(){

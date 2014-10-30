@@ -49,6 +49,7 @@ public class SituationTester {
 			lightTime[x] = physics.getLightTime();
 			stopInTime[x] = physics.canStopTime();
 			stopInDist[x] = physics.canStopDistance();
+			System.out.println(physics.runYellow());
 		}
 		
 		System.out.println();

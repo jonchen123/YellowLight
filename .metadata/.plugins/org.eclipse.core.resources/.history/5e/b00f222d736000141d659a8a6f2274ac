@@ -96,14 +96,15 @@ public class SimPhysics {
 	
 	//determines if the car can just keep going and make the yellow
 	//returns true if it can pass, false if it can't
-	public String runYellow(){
+	public boolean runYellow(){
 		if(canStopTime().equals("false") || canStopDistance().equals("false")){
-			double distanceToTravel = fromLight + 100;
-			double timeToPass = (2*(fromLight + 100))/(2*vi);
+			System.out.println("faslse");
+			double timeToPass = (2*(deltaX + 100))/(2*vi);
 			if(timeToPass < lightTime){
-				return String.format("%4s", "true");			}
+				return true;
+			}
 		}
-		 return String.format("%4s", "false");
+		return false;
 	}
 	
 	public String toStringFormat(){
@@ -114,7 +115,7 @@ public class SimPhysics {
 		String stopTimeFormat = String.format("%4f", stopTime);
 		String coastFormat = String.format("%4f", coast);
 		String lightTimeFormat = String.format("%4f", lightTime);
-		return String.format("%-20s%-20s%-20s%-30s%-20s%-30s%-20s%-20s%-20s%-20s", viFormat, aFormat, deltaXFormat,fromLightFormat, stopTimeFormat, coastFormat, lightTimeFormat, canStopTime(), canStopDistance(), runYellow());
+		return String.format("%-20s%-20s%-20s%-30s%-20s%-30s%-20s%-20s%-20s", viFormat, aFormat, deltaXFormat,fromLightFormat, stopTimeFormat, coastFormat, lightTimeFormat, canStopTime(), canStopDistance());
 		//return viFormat  + aFormat + "\t" + deltaXFormat + "\t" + fromLightFormat + "\t" + stopTimeFormat + 
 			//	"\t" + coastFormat + "\t" + lightTimeFormat + "\t" + canStopTime() + "\t" + canStopDistance();
 	}
@@ -122,8 +123,7 @@ public class SimPhysics {
 	
 	
 	public static void main(String[] args){
-		//vi, a, frmLight, yellowtime
-		SimPhysics test = new SimPhysics(100, -5, 5, 5);
+		SimPhysics test = new SimPhysics(10, -5, 5, 5);
 		System.out.println(test.calcStoppingDistance(10, -5));
 		System.out.println(test.canStopTime());
 		System.out.println(test.canStopDistance());
