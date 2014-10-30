@@ -28,7 +28,7 @@ Credit
 
 [Aravind Koneru] (github.com/aravindkoneru)
 
-[Jonathan Chen] (github.com/jonchen123)
+[Jonathan Chen] (https://github.com/jonchen123)
 
 Eric Zhang
 
