@@ -16,12 +16,12 @@ This computer simulation is our solution to the complex problem of determining t
 TODO
 ====
 
-- [ ] Assume that the driver continues at a constant velocity 
+- [x] --Assume that the driver continues at a constant velocity--
 - [ ] Create graphical representation of simulation 
 - [ ] Simulate the cycles of the other lights (red, green)
 - [ ] Simulate the intersection 
 - [ ] Determine optimal cycle 
-- [ ] Run tests with other velocities
+- [x] --Run tests with other velocities--
 
 Credit
 ======
